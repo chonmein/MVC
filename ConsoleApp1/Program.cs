@@ -80,6 +80,7 @@ namespace ConsoleApp1
                 Console.WriteLine("請輸入三角形的底邊長");
                 int input = Convert.ToInt32(Console.ReadLine());
                 var numberList = Enumerable.Range(1, input);
+                Console.WriteLine("\n正直角三角\n");
                 foreach (int number in numberList)
                 {
                     for (int i = 0; i < input - number; i++)
@@ -92,6 +93,30 @@ namespace ConsoleApp1
                     }
                     Console.WriteLine();
                 }
+
+                Console.WriteLine("\n倒直角三角\n");
+
+                numberList = numberList.Reverse();
+                foreach (int number in numberList)
+                {
+                    for (int i = 0; i < input - number; i++)
+                    {
+                        Console.Write(" ");
+                    }
+                    for (int i = 0; i < number; i++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.WriteLine();
+                }
+
+                Console.WriteLine();
+
+                var triangleUp = new Triangle(input);
+                var triangleDown = new Triangle(input-2);
+
+                triangleUp.PrintTriangle();
+                triangleDown.PrintReverseTriangle();
             }
         }
 
