@@ -118,7 +118,7 @@ namespace ConsoleApp1
                             x = " ";
                         //Console.Write(x);
                             
-                        if ((number <(highValue-MedianValue)-1) | (i < (number - 1-(highValue-MedianValue)+2) | i > (input- number+(highValue-MedianValue)-2)))
+                        if ((number <(highvalue-medianvalue)-1) | (i < (number - 1-(highvalue-medianvalue)+2) | i > (input- number+(highvalue-medianvalue)-2)))
                             y = " ";
                         else
                             y = "*";
