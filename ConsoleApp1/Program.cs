@@ -75,21 +75,64 @@ namespace ConsoleApp1
             //Console.ReadLine();
 
             //如果使用者輸入多少，那麼就出現底為多少的三角形
+            string x,y,xy;
             while (true)
             {
                 Console.WriteLine("請輸入三角形的底邊長");
                 int input = Convert.ToInt32(Console.ReadLine());
-                var numberList = Enumerable.Range(1, input);
+                var highValue = input*3 / 4 + 1 ;
+                var MedianValue = input / 2 ;
+                //正三角
+                //var numberList = Enumerable.Range(1, input/2+1);
+                //六芒星
+                var numberList = Enumerable.Range(1, highValue);
                 foreach (int number in numberList)
                 {
-                    for (int i = 0; i < input - number; i++)
+                    //XXXXXX 正三角
+                    //for (int i = 0; i < input; i++)
+                    //{
+                    //    if (i <= (MedianValue + (number - 1)) & i >= (MedianValue - (number - 1)))
+                    //        x = "*";
+                    //    else
+                    //        x = " ";
+                    //    Console.Write(x);
+                    //};
+
+                    //YYYYYYY  倒三角
+                    //for (int i = 0; i < input; i++)
+                    //{
+                    //    if (i < (number - 1) | i > (input- number))
+                    //        y = " ";
+                    //    else
+                    //        y = "*";
+                    //    Console.Write(y);
+                    //};
+
+                    //ZZZZZZZ  六芒星
+                    //Console.Write(number);
+                     for (int i = 0; i < input; i++)
                     {
-                        Console.Write(" ");
-                    }
-                    for (int i = 0; i < number; i++)
-                    {                        
-                        Console.Write("*");
-                    }
+                        if ((number <= MedianValue+1) & (i <= (MedianValue + (number - 1)) & i >= (MedianValue - (number - 1))))
+                            x = "*";
+                        else
+                            x = " ";
+                        //Console.Write(x);
+                            
+                        if ((number <(highValue-MedianValue)-1) | (i < (number - 1-(highValue-MedianValue)+2) | i > (input- number+(highValue-MedianValue)-2)))
+                            y = " ";
+                        else
+                            y = "*";
+                        //Console.Write(y);
+
+
+                        if ((x == y)  )
+                               xy =" ";
+                        else
+                            xy ="*";
+                        Console.Write(xy);
+                            
+                    };
+
                     Console.WriteLine();
                 }
             }
