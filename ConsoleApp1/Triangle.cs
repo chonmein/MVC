@@ -39,23 +39,17 @@ namespace ConsoleApp1
             }
         }
 
-        ////畫菱形
-        //public void PrintDiamond(int length,int starCount)
-        //{
-        //    if (length > 0)
-        //    {
-        //        PrintEmpty(length / 2);
-        //        PrintStar(starCount);
-        //        PrintEnter();
-        //        PrintDiamond(length - 2, starCount + 2);
-        //    }
-        //    else
-        //    {
-        //        PrintEmpty(length - 1);
-        //        PrintStar(starCount);
-        //        PrintEnter();
-        //    }
-        //}
+        //用遞迴畫正三角形
+        public void PrintTriangle(int length, int starCount)
+        {
+            if (length > 0)
+            {                
+                PrintTriangle(length - 2, starCount + 2);
+                PrintEmpty(length / 2);
+                PrintStar(starCount);
+                PrintEnter();
+            }
+        }
 
         private void PrintEmpty(int length)
         {

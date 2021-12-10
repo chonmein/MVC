@@ -117,6 +117,9 @@ namespace ConsoleApp1
 
                 triangleUp.PrintTriangle();
                 triangleDown.PrintReverseTriangle();
+
+                Console.WriteLine();
+                triangleUp.PrintTriangle(input, 1);
             }
         }
 
